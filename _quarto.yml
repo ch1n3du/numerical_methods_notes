@@ -13,8 +13,8 @@ website:
 
 format:
   html:
-    # theme: sketchy
     # theme: lux
+    # theme: sketchy
     # theme: sandstone
     theme: litera
     css: styles.css
