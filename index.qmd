@@ -1,0 +1,5 @@
+---
+title: "Daniel's Numerical Methods Notes"
+---
+
+Small site by [Onyesoh Daniel](https://github.com/ch1n3du) to share Notebooks on _Numerical Methods(CSC-431)_

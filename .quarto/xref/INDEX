@@ -1,0 +1,17 @@
+{
+  "about.qmd": {
+    "about.html": "088c854d"
+  },
+  "index.qmd": {
+    "index.html": "4d009307"
+  },
+  "notebooks/solutions_to_nonlinear_equations.ipynb": {
+    "solutions_to_nonlinear_equations.html": "9a7b5535"
+  },
+  "solutions_to_nonlinear_equations.ipynb": {
+    "solutions_to_nonlinear_equations.html": "40ccc52b"
+  },
+  "Solutions to Non-linear Equations/What are Non-linear Equations.qmd": {
+    "What are Non-linear Equations.html": "2c4ea4af"
+  }
+}

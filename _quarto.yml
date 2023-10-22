@@ -1,0 +1,33 @@
+project:
+  type: website
+  output-dir: docs
+
+website:
+  title: "Numerical Methods Notes"
+  reader-mode: true
+  # navbar:
+  #   left:
+  #     - href: index.qmd
+  #       text: Home
+  #     # - about.qmd
+  sidebar:
+    style: "docked"
+    search: true
+    contents: auto
+    # contents:
+    #   - section: "Solutions to Non-linear Equations"
+    #     contents:
+    #       - ./notebooks/solutions_to_nonlinear_equations.ipynb
+
+
+format:
+  html:
+    # theme: sketchy
+    # theme: lux
+    # theme: sandstone
+    theme: litera
+    css: styles.css
+    toc: true
+
+
+
