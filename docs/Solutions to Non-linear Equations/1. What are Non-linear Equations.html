@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Numerical Methods Notes - Daniel’s Numerical Methods Notes</title>
+<title>Numerical Methods Notes - 1. What are Root Finding Problems?</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,22 +23,24 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-listing/list.min.js"></script>
+<script src="../site_libs/quarto-listing/quarto-listing.js"></script>
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -59,9 +61,40 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<script>
 
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    const listingTargetEl = window.document.querySelector('#listing-listing .list');
+    if (!listingTargetEl) {
+      // No listing discovered, do not attach.
+      return; 
+    }
 
-<link rel="stylesheet" href="styles.css">
+    const options = {
+      valueNames: ['listing-title','listing-author','listing-image','listing-description',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
+      
+      searchColumns: ["listing-title","listing-author","listing-image","listing-description"],
+    };
+
+    window['quarto-listings'] = window['quarto-listings'] || {};
+    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
+
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  });
+
+  window.addEventListener('hashchange',() => {
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  })
+  </script>
+
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<link rel="stylesheet" href="../styles.css">
 </head>
 
 <body class="nav-sidebar docked">
@@ -73,9 +106,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">
-      Numerical Methods Notes
-      </li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../Solutions to Non-linear Equations/1. What are Non-linear Equations.html">Solutions to Non-linear Equations</a></li><li class="breadcrumb-item"><a href="../Solutions to Non-linear Equations/1. What are Non-linear Equations.html">1. What are Root Finding Problems?</a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -90,7 +121,7 @@ ul.task-list li input[type="checkbox"] {
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation docked overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
-      <a href="./">Numerical Methods Notes</a> 
+      <a href="../">Numerical Methods Notes</a> 
         <div class="sidebar-tools-main">
   <a href="" class="quarto-reader-toggle quarto-navigation-tool px-1" onclick="window.quartoToggleReader(); return false;" title="Toggle reader mode">
   <div class="quarto-reader-toggle-btn">
@@ -110,7 +141,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
- <span class="menu-text">1. Solutions to Non-linear Equations</span></a>
+ <span class="menu-text">Solutions to Non-linear Equations</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -118,14 +149,14 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./1. Solutions to Non-linear Equations/1.1. What are Non-linear Equations.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">1.1. What are Root Finding Problems?</span></a>
+  <a href="../Solutions to Non-linear Equations/1. What are Non-linear Equations.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">1. What are Root Finding Problems?</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./1. Solutions to Non-linear Equations/1.2. Soli.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">1.2. Solving Non-linear Equations</span></a>
+  <a href="../Solutions to Non-linear Equations/2. Soli.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">2. Solving Non-linear Equations</span></a>
   </div>
 </li>
       </ul>
@@ -136,14 +167,23 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#example-1" id="toc-example-1" class="nav-link active" data-scroll-target="#example-1">Example 1</a>
+  <ul class="collapse">
+  <li><a href="#solution" id="toc-solution" class="nav-link" data-scroll-target="#solution">Solution</a></li>
+  </ul></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Daniel’s Numerical Methods Notes</h1>
+<h1 class="title">1. What are Root Finding Problems?</h1>
 </div>
 
 
@@ -158,11 +198,61 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<p>Small site by <a href="https://github.com/ch1n3du">Onyesoh Daniel</a> to share Notebooks on <em>Numerical Methods(CSC-431)</em></p>
+<p>Root-finding problems are problems where you are given a continuous function, <span class="math inline">\(f(x)\)</span> and have to find values <span class="math inline">\(r\)</span> where: <span class="math inline">\(f(r) = 0\)</span></p>
+<section id="example-1" class="level2">
+<h2 class="anchored" data-anchor-id="example-1">Example 1</h2>
+<p>Formulate finding the cube root of <span class="math inline">\(2\)</span> as a <em>root-finding problem</em></p>
+<section id="solution" class="level3">
+<h3 class="anchored" data-anchor-id="solution">Solution</h3>
+<ol type="1">
+<li><p>Get the equation that expresses the relation:</p>
+<p><span class="math inline">\(x^3 = 2\)</span></p></li>
+<li><p>Factor the equation to make one side equal to <span class="math inline">\(0\)</span>:</p>
+<p><span class="math inline">\(x^{3} - 2 = 0\)</span></p></li>
+<li><p>Now that the equation is equal to <span class="math inline">\(0\)</span> convert it to a function <span class="math inline">\(f(x)\)</span>:</p>
+<p><span class="math inline">\(f(x) = x^{3} - 2\)</span></p></li>
+<li><p>Find a value <span class="math inline">\(r\)</span> such that <span class="math inline">\(f(r) = 0\)</span></p></li>
+</ol>
+<p>Vóila, you now have a continuous function <span class="math inline">\(f(x)\)</span> that express the relation you want and by finding <span class="math inline">\(r\)</span> you solve your problem.</p>
+<p>Numerical Methods are primarily concerned with step <span class="math inline">\(4\)</span>, hence the name <em>root-finding problems</em>.</p>
 
+<p>:::{#quarto-listing-pipeline .hidden} <span class="hidden" data-render-id="quarto-enable-math-inline"><span class="math inline">\(e = mC^2\)</span></span></p>
+<p>:::{.hidden render-id=“pipeline-listing-listing”}</p>
+:::{.list .quarto-listing-default}
+<div class="quarto-post image-right" data-index="0" data-listing-file-modified-sort="1698000215307" data-listing-reading-time-sort="2">
+<div class="thumbnail">
+<p><a href="../Solutions to Non-linear Equations/2. Soli.html"> <p class="card-img-top"><img src="2. Soli_files\figure-html\cell-4-output-3.png"  class="thumbnail-image card-img"/></p> </a></p>
+</div>
+<div class="body">
+<a href="../Solutions to Non-linear Equations/2. Soli.html">
+<h3 class="no-anchor listing-title">
+<ol start="2" type="1">
+<li>Solving Non-linear Equations
+</li></ol></h3>
+<div class="listing-subtitle">
 
+</div>
+<div class="listing-description">
+Numerical methods for solving non-linear equations can be broadly divided into two:
+</div>
+</a>
+</div>
+<div class="metadata">
+<a href="../Solutions to Non-linear Equations/2. Soli.html"> </a>
+</div>
+</div>
+:::
 
-</main> <!-- /main -->
+<div class="listing-no-matching d-none">
+No matching items
+</div>
+<p>:::</p>
+<p>:::</p>
+
+</section>
+</section>
+
+<div class="quarto-listing quarto-listing-container-default" id="listing-listing"></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {

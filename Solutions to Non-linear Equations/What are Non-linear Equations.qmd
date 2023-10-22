@@ -1,5 +1,0 @@
----
-title: What are Non-linear Equations
-table-of-contents: true
-listing: default
----

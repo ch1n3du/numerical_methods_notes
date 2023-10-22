@@ -1,0 +1,32 @@
+---
+title: 1.1. What are Root Finding Problems?
+table-of-contents: true
+listing: default
+---
+
+Root-finding problems are problems where you are given a continuous function, $f(x)$
+and have to find values $r$ where: $f(r) = 0$
+
+## Example 1
+
+Formulate finding the cube root of $2$ as a *root-finding problem*
+
+### Solution
+
+1. Get the equation that expresses the relation:
+
+    $x^3 = 2$
+
+2. Factor the equation to make one side equal to $0$:
+
+    $x^{3} - 2 = 0$
+
+3. Now that the equation is equal to $0$ convert it to a function $f(x)$:
+
+    $f(x) = x^{3} - 2$
+
+4. Find a value $r$ such that $f(r) = 0$
+
+Vóila, you now have a continuous function $f(x)$ that express the relation you want and by finding $r$ you solve your problem.
+
+Numerical Methods are primarily concerned with step $4$, hence the name *root-finding problems*.
