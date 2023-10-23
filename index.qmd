@@ -4,7 +4,7 @@ title: "Daniel's Numerical Methods Notes"
 
 <br/>
 <p align="center">
-<img src="./static/The Astronomer.jpeg" width="300" height="350">
+<img src="/static/The Astronomer.jpeg" width="300" height="350">
 </p>
 
 Small site by [Onyesoh Daniel](https://ch1n3du.github.io/) to share Notebooks on _Numerical Methods(CSC-431)_

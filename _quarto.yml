@@ -5,7 +5,7 @@ project:
 website:
   title: "Numerical Methods Notes"
   navbar:
-    logo: ./static/The Astronomer.jpeg
+    logo: /static/The Astronomer.jpeg
   reader-mode: true
   sidebar:
     style: "docked"
