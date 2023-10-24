@@ -1,0 +1,18 @@
+---
+title: 1.2. Numerical Methods for solving Non-linear Equations
+table-of-contents: true
+---
+
+Numerical methods for solving non-linear equations can be broadly divided into two:
+
+1. Bracketing Methods
+2. Open Methods
+
+## Bracketing Methods
+
+These methods take an interval $[a,b]$ which is known to contain
+a root of the equation, the interval is reduced through multiple iterations with the aim of increasing the accuracy of the estimate of the root.
+
+## Open Methods
+
+These methods don't require an interval, they just take a rough estimate of the equation's root and iteratively improve the accuracy.
