@@ -7,6 +7,20 @@
     "text": "Small site by Onyesoh Daniel to share Notebooks on Numerical Methods(CSC-431)"
   },
   {
+    "objectID": "1. Solutions to Non-linear Equations/1.1. What are Non-linear Equations.html",
+    "href": "1. Solutions to Non-linear Equations/1.1. What are Non-linear Equations.html",
+    "title": "1.1. What are Root Finding Problems?",
+    "section": "",
+    "text": "Root-finding problems are problems where you are given a continuous function, \\(f(x)\\) and have to find values \\(r\\) where: \\(f(r) = 0\\)"
+  },
+  {
+    "objectID": "1. Solutions to Non-linear Equations/1.1. What are Non-linear Equations.html#example-1",
+    "href": "1. Solutions to Non-linear Equations/1.1. What are Non-linear Equations.html#example-1",
+    "title": "1.1. What are Root Finding Problems?",
+    "section": "Example 1",
+    "text": "Example 1\nFormulate finding the cube root of \\(2\\) as a root-finding problem\n\nSolution\n\nGet the equation that expresses the relation:\n\\(x^3 = 2\\)\nFactor the equation to make one side equal to \\(0\\):\n\\(x^{3} - 2 = 0\\)\nNow that the equation is equal to \\(0\\) convert it to a function \\(f(x)\\):\n\\(f(x) = x^{3} - 2\\)\nFind a value \\(r\\) such that \\(f(r) = 0\\)\n\nVóila, you now have a continuous function \\(f(x)\\) that express the relation you want and by finding \\(r\\) you solve your problem.\nNumerical Methods are primarily concerned with step \\(4\\), hence the name root-finding problems."
+  },
+  {
     "objectID": "1. Solutions to Non-linear Equations/1.2 Numerical Methods for Non-Linear Equations.html",
     "href": "1. Solutions to Non-linear Equations/1.2 Numerical Methods for Non-Linear Equations.html",
     "title": "1.2. Numerical Methods for solving Non-linear Equations",
@@ -26,20 +40,6 @@
     "title": "1.2. Numerical Methods for solving Non-linear Equations",
     "section": "Open Methods",
     "text": "Open Methods\nThese methods don’t require an interval, they just take a rough estimate of the equation’s root and iteratively improve the accuracy."
-  },
-  {
-    "objectID": "1. Solutions to Non-linear Equations/1.1. What are Non-linear Equations.html",
-    "href": "1. Solutions to Non-linear Equations/1.1. What are Non-linear Equations.html",
-    "title": "1.1. What are Root Finding Problems?",
-    "section": "",
-    "text": "Root-finding problems are problems where you are given a continuous function, \\(f(x)\\) and have to find values \\(r\\) where: \\(f(r) = 0\\)"
-  },
-  {
-    "objectID": "1. Solutions to Non-linear Equations/1.1. What are Non-linear Equations.html#example-1",
-    "href": "1. Solutions to Non-linear Equations/1.1. What are Non-linear Equations.html#example-1",
-    "title": "1.1. What are Root Finding Problems?",
-    "section": "Example 1",
-    "text": "Example 1\nFormulate finding the cube root of \\(2\\) as a root-finding problem\n\nSolution\n\nGet the equation that expresses the relation:\n\\(x^3 = 2\\)\nFactor the equation to make one side equal to \\(0\\):\n\\(x^{3} - 2 = 0\\)\nNow that the equation is equal to \\(0\\) convert it to a function \\(f(x)\\):\n\\(f(x) = x^{3} - 2\\)\nFind a value \\(r\\) such that \\(f(r) = 0\\)\n\nVóila, you now have a continuous function \\(f(x)\\) that express the relation you want and by finding \\(r\\) you solve your problem.\nNumerical Methods are primarily concerned with step \\(4\\), hence the name root-finding problems."
   },
   {
     "objectID": "1. Solutions to Non-linear Equations/1.3. Bracketing Methods.html",
